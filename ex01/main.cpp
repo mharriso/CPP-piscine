@@ -2,7 +2,7 @@
 //#include <string>
 #include "Contact.hpp"
 
-#define NUM_CONTACTS 8
+#define NUM_CONTACTS 2
 #define GREEN   "\033[32m"
 #define RESET   "\033[0m"
 #define CRAPPY "\U0001F47B"
@@ -26,7 +26,7 @@ void	add_contact(Contact *book)
 {
 	static int	i;
 
-	if(i == NUM_CONTACTS - 1)
+	if(i == NUM_CONTACTS)
 		i = 0;
 	set_input(book[i], "First name: ", &Contact::setFirstName);
 	set_input(book[i], "Last name: ", &Contact::setLastName);
@@ -50,16 +50,23 @@ void	print_format(std::string s0, std::string s1, std::string s2, std::string s3
 	std::cout << std::setw(10) << form_str(s3) << std::endl;
 }
 
-void	print_book(Contact const *book)
+void	print_book(Contact *book)
 {
 	print_format("Index", "First Name", "Last Name", "Nickname");
-	for(int i = 0; i < NUM_CONTACTS && !book[i]._firstname.empty(); i++)
-		print_format(std::to_string(i), book[i]._firstname, book[i]._lastname, book[i]._nickname);
+	for(int i = 0; i < NUM_CONTACTS && !book[i].getFirstName().empty(); i++)
+		print_format(std::to_string(i + 1), book[i].getFirstName(), book[i].getLastName(), book[i].getNickname());
 }
 
 void	search_contact(Contact *book)
 {
+	int	index;
+
 	print_book(book);
+	std::cout << GREEN"index "CRAPPY"> "RESET;
+	std::cin >> index;
+	std::cout << index << std::endl;
+	std::cin.clear();
+	std::cin.ignore(512, '\n');
 
 }
 
@@ -69,7 +76,7 @@ int	main(int argc, char const *argv[])
 	std::string	input;
 
 	std::cout << GREEN"crappybook "CRAPPY"> "RESET;
-	while(getline(std::cin, input))
+	while(getline(std::cin, input, '\n'))
 	{
 		if(input == "ADD")
 			add_contact(book);

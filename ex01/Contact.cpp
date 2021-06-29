@@ -25,7 +25,33 @@ int Contact::setDarkestSecret(std::string const str)
 	_darkestnecret = str; return (0);
 }
 
-Contact::Contact()
+std::string	Contact::getFirstName()
+{
+	return (_firstname);
+}
+
+std::string	Contact::getLastName()
+{
+	return (_lastname);
+}
+
+std::string	Contact::getNickname()
+{
+	return (_nickname);
+}
+
+std::string	Contact::getPhoneNumber()
+{
+	return (_phonenumber);
+}
+
+std::string	Contact::getDarkestSecret()
+{
+	return (_darkestnecret);
+}
+
+Contact::Contact() :
+	_firstname("")
 {
 
 }
