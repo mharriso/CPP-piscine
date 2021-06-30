@@ -1,10 +1,11 @@
 CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror
+CFLAGS     = #-Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       = megaphone
+NAME       = ledger
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = megaphone.cpp
+SRCS       = Account.cpp \
+             tests.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
@@ -30,3 +31,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

@@ -1,22 +1,26 @@
 #include <iomanip>
-//#include <string>
 #include "Contact.hpp"
 
-#define NUM_CONTACTS 2
+#define NUM_CONTACTS 8
 #define GREEN   "\033[32m"
+#define ULINE   "\033[21m"
 #define RESET   "\033[0m"
 #define CRAPPY "\U0001F47B"
 
-//first name, last name, nickname, phone number,darkest secret
-void	set_input(Contact &contact, std::string type, int (Contact::*func)(std::string input))
+void	set_input(Contact &contact, std::string type, void (Contact::*func)(std::string input))
 {
 	std::string input;
 
 	std::cout << type;
 	while(getline(std::cin, input))
 	{
-		if(!(contact.*func)(input))
+		if(!input.empty())
+		{
+			(contact.*func)(input);
 			return ;
+		}
+		else
+			std::cout << "This field is required" << std::endl;
 		std::cout << type;
 	}
 	return ;
@@ -57,6 +61,15 @@ void	print_book(Contact *book)
 		print_format(std::to_string(i + 1), book[i].getFirstName(), book[i].getLastName(), book[i].getNickname());
 }
 
+void	print_contact(Contact book)
+{
+	std::cout << ULINE"First name"RESET": " << book.getFirstName() << std::endl;
+	std::cout << ULINE"Last name"RESET": " << book.getLastName() << std::endl;
+	std::cout << ULINE"Nickname"RESET": " << book.getNickname() << std::endl;
+	std::cout << ULINE"Phone number"RESET": " << book.getPhoneNumber() << std::endl;
+	std::cout << ULINE"Darkest secret"RESET": " << book.getDarkestSecret() << std::endl;
+}
+
 void	search_contact(Contact *book)
 {
 	int	index;
@@ -64,13 +77,20 @@ void	search_contact(Contact *book)
 	print_book(book);
 	std::cout << GREEN"index "CRAPPY"> "RESET;
 	std::cin >> index;
-	std::cout << index << std::endl;
+	while(index < 1 || index > NUM_CONTACTS || book[index - 1].getFirstName().empty())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cerr << "Invalid index" << std::endl;
+		std::cout << GREEN"index "CRAPPY"> "RESET;
+		std::cin >> index;
+	}
 	std::cin.clear();
-	std::cin.ignore(512, '\n');
-
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	print_contact(book[index - 1]);
 }
 
-int	main(int argc, char const *argv[])
+int	main()
 {
 	Contact		book[NUM_CONTACTS];
 	std::string	input;
