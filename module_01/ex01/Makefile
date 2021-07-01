@@ -1,16 +1,15 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       = ledger
+NAME       =
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = Account.cpp \
-             tests.cpp
+SRCS       = .cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
-GREEN      = \033[1;32m
-RESET      = \033[0m
+GREEN      = [1;32m
+RESET      = [0m
 
 all: $(NAME)
 $(NAME): $(OBJS)
@@ -31,4 +30,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-

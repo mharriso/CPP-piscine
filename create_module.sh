@@ -1,11 +1,22 @@
-CC         = clang++
+if [ $# -ne 2 ]
+then
+echo "first argument must be number of module XX"
+echo "second argument must be the number of exercises"
+else
+mkdir module_$1
+cd module_$1
+for (( i=0; i < $2; i++ ))
+do
+mkdir ex0$i
+cd ex0$i
+mkdir src include
+echo 'CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       = ledger
+NAME       =
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = Account.cpp \
-             tests.cpp
+SRCS       = .cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
@@ -30,5 +41,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re' > Makefile
+cd ..
+done
+fi
