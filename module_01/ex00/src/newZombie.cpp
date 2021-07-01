@@ -1,11 +1,9 @@
-#include "newZombie.hpp"  
-	
-newZombie::newZombie()
+#include "Zombie.hpp"
+
+Zombie* newZombie(std::string name)
 {
-	
-}
-	
-newZombie::~newZombie()
-{
-	
+	Zombie *new_zombie;
+
+	new_zombie = new Zombie(name);
+	return (new_zombie);
 }

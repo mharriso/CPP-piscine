@@ -1,10 +1,12 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       =
+NAME       = Zombies
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = .cpp
+SRCS       = main.cpp \
+             Zombie.cpp \
+             ZombieHorde.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

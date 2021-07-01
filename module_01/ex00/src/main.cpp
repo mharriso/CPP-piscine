@@ -1,6 +1,14 @@
-int main(int argc, char const *argv[])
+#include "Zombie.hpp"
+#include "func.hpp"
+
+int main()
 {
-	/* code */
-	return 0;
+	Zombie *newZmb;
+
+	newZmb = newZombie("Heap");
+	newZmb->announce();
+	delete newZmb;
+	randomChump("Stack");
+	return (0);
 }
 
