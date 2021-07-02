@@ -1,10 +1,13 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       =
+NAME       = attack
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = .cpp
+SRCS       = main.cpp \
+			 Weapon.cpp \
+			 HumanA.cpp \
+			 HumanB.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

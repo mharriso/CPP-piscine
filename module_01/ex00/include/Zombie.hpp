@@ -1,6 +1,5 @@
 #ifndef Zombie_HPP
 # define Zombie_HPP
-#pragma once
 
 #include <iostream>
 

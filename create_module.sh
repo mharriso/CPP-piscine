@@ -16,7 +16,7 @@ INCLUDE    = ./include
 NAME       =
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = .cpp
+SRCS       = main.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
