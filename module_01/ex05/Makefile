@@ -1,7 +1,7 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       =
+NAME       = karen
 SRCDIR     = src
 OBJDIR     = .obj
 SRCS       = main.cpp \

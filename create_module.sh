@@ -42,6 +42,14 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re' > Makefile
+cd src
+echo '#include <iostream>
+
+int main()
+{
+	return 0;
+}' > main.cpp
+cd ..
 cd ..
 done
 fi

@@ -1,6 +1,6 @@
 #ifndef HUMANB_H
 #define HUMANB_H
-#pragma once
+
 #include <iostream>
 #include "Weapon.hpp"
 
