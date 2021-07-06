@@ -1,5 +1,5 @@
 #include "Fixed.hpp"
-
+#include <cmath>
 Fixed::Fixed() :
 		_fixpoint(0)
 {
@@ -22,6 +22,27 @@ Fixed& Fixed::operator=(const Fixed&Rhs)
 	return (*this);
 }
 
+Fixed::Fixed(const int i) :
+		_fixpoint(i << _fbits)
+{
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float f) :
+		_fixpoint(roundf(f * (1 << _fbits)))
+{
+	std::cout << "Float constructor called" << std::endl;
+}
+
+float	Fixed::toFloat( void ) const
+{
+	return ((float)_fixpoint / (1 <<_fbits));
+}
+int		Fixed::toInt( void ) const
+{
+	return (_fixpoint >> _fbits);
+}
+
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
@@ -37,4 +58,10 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	_fixpoint = raw;
+}
+
+std::ostream& operator << (std::ostream &os, const Fixed &f)
+{
+	os << f.toFloat();
+	return os;
 }
