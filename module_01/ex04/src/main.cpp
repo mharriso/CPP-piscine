@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 	std::ofstream fout(filename + ".replace");
 	if(!fin.is_open())
 		exit_error("CAN NOT CREATE FILENAME.replace");
-	while(!fin.eof())
+	while(!fin.eof() && !fin.fail())
 	{
 		if(buf == s1)
 			fout << s2 << std::endl;
@@ -37,5 +37,7 @@ int main(int argc, char const *argv[])
 			fout << buf << std::endl;
 		getline(fin, buf);
 	}
+	fin.close();
+	fout.close();
 	return (0);
 }
