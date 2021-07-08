@@ -18,7 +18,6 @@ Fixed::Fixed(const Fixed& Src) :
 
 Fixed& Fixed::operator=(const Fixed&Rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	if(this != &Rhs)
 	{
 		_fixpoint = Rhs._fixpoint;

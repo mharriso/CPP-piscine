@@ -40,6 +40,6 @@ class Fixed
 		~Fixed();
 };
 
-std::ostream& operator << (std::ostream &os, const Fixed &f);
+std::ostream& operator <<(std::ostream &os, const Fixed &f);
 
 #endif
