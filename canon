@@ -1,0 +1,10 @@
+-> default constructor
+-> copy contructor
+Class(const Class&);
+-> assignation operator overload
+-> destructor
+
+std::ostream& operator << (std::ostream &os, const ClassName &rhs)
+{
+	return os;
+}

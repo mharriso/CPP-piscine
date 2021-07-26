@@ -1,10 +1,10 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       = claptrap
+NAME       =
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp ClapTrap.cpp
+SRCS       = main.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
