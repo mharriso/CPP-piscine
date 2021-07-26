@@ -3,7 +3,8 @@
 
 int main()
 {
-	ScavTrap rick("rick");
+	ScavTrap rick("Rick");
 
+	rick.guardGate();
 	return 0;
 }
