@@ -63,6 +63,11 @@ std::string	ClapTrap::getName() const
 	return this->_name;
 }
 
+int	ClapTrap::getHitPoints() const
+{
+	return this->_hitPoints;
+}
+
 std::ostream& operator << (std::ostream &os, const ClapTrap &rhs)
 {
 	os << rhs.getName();

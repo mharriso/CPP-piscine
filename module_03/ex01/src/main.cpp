@@ -3,8 +3,11 @@
 
 int main()
 {
-	ScavTrap rick("Rick");
+	ScavTrap scav("Rick");
+	ClapTrap clap("Sensei");
 
-	rick.guardGate();
+	std::cout << "ClapTrap " << clap.getName() << " has " << clap.getHitPoints() << " hitpoints"<< std::endl;
+	std::cout << "ScavTrap " << scav.getName() << " has " << scav.getHitPoints() << " hitpoints"<< std::endl;
+	scav.guardGate();
 	return 0;
 }

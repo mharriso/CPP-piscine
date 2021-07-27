@@ -2,9 +2,9 @@
 
 ClapTrap::ClapTrap(std::string name) :
 		_name(name),
-		_hitPoints(100),
-		_energyPoints(50),
-		_attackDamage(20)
+		_hitPoints(10),
+		_energyPoints(10),
+		_attackDamage(0)
 {
 	std::cout << "ClapTrap constructor called" << std::endl;
 }
@@ -61,6 +61,11 @@ void		ClapTrap::beRepaired(unsigned int amount)
 std::string	ClapTrap::getName() const
 {
 	return this->_name;
+}
+
+int	ClapTrap::getHitPoints() const
+{
+	return this->_hitPoints;
 }
 
 std::ostream& operator << (std::ostream &os, const ClapTrap &rhs)

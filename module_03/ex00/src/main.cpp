@@ -4,9 +4,11 @@
 
 int main()
 {
-	ClapTrap sensei("Sensei");
-	sensei.attack("Jack");
-	sensei.takeDamage(242);
-	sensei.beRepaired(121);
+	ClapTrap clap("Sensei");
+
+	std::cout << "ClapTrap " << clap.getName() << " has " << clap.getHitPoints() << " hitpoints"<< std::endl;
+	clap.attack("Jack");
+	clap.takeDamage(242);
+	clap.beRepaired(121);
 	return 0;
 }
