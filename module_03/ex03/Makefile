@@ -1,5 +1,5 @@
 CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror
+CFLAGS     = -Wall -Wextra -Werror # -Wshadow -Wno-shadow
 INCLUDE    = ./include
 NAME       =
 SRCDIR     = src
