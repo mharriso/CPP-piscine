@@ -5,8 +5,6 @@
 
 class FragTrap: virtual public ClapTrap
 {
-	private:
-
 	public:
 		void highFivesGuys(void);
 		FragTrap& operator=(const FragTrap &rhs);

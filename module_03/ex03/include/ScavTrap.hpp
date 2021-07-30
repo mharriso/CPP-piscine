@@ -5,10 +5,10 @@
 
 class ScavTrap: virtual public ClapTrap
 {
-	private:
-
 	public:
 		void guardGate();
+		void setEnergyPoints();
+		void attack(std::string const& target);
 		ScavTrap(std::string name);
 		ScavTrap&operator=(const ScavTrap &rhs);
 		ScavTrap(const ScavTrap&);

@@ -41,3 +41,14 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap have enterred in Gate keeper mode" << std::endl;
 }
+
+void	ScavTrap::setEnergyPoints()
+{
+	_energyPoints = 50;
+}
+
+void		ScavTrap::attack(std::string const &target)
+{
+	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " \
+	<< this->_attackDamage << " points of damage!" << std::endl;
+}

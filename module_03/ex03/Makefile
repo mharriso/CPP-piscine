@@ -1,10 +1,11 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror # -Wshadow -Wno-shadow
 INCLUDE    = ./include
-NAME       =
+NAME       = diamond
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp
+SRCS       = main.cpp ClapTrap.cpp ScavTrap.cpp \
+			FragTrap.cpp DiamondTrap.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

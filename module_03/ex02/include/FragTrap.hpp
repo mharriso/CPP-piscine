@@ -5,8 +5,6 @@
 
 class FragTrap: public ClapTrap
 {
-	private:
-
 	public:
 		void highFivesGuys(void);
 		FragTrap& operator=(const FragTrap &rhs);

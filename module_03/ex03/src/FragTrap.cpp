@@ -1,14 +1,15 @@
 #include "FragTrap.hpp"
+#include "tools.hpp"
 
 FragTrap::FragTrap()
 {
-	std::cout << "FragTrap default constructor called" << std::endl;
+	putString("FragTrap default constructor called", C_GREEN);
 }
 
 FragTrap::FragTrap(const std::string name) :
 		ClapTrap(name)
 {
-	std::cout << "FragTrap constructor called" << std::endl;
+	putString("FragTrap constructor called", C_GREEN);
 	_hitPoints = 100;
 	_energyPoints = 100;
 	_attackDamage = 30;
@@ -16,18 +17,18 @@ FragTrap::FragTrap(const std::string name) :
 
 FragTrap::FragTrap(const FragTrap &src)
 {
-	std::cout << "FragTrap copy constructor called" << std::endl;
+	putString("FragTrap copy constructor called", C_GREEN);
 	*this = src;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FragTrap destructor called" << std::endl;
+	putString("FragTrap destructor called", C_GREEN);
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &rhs)
 {
-	std::cout << "FragTrap assignation operator called" << std::endl;
+	putString("FragTrap assignation operator called", C_GREEN);
 	if(this == &rhs)
 		return *this;
 	this->_attackDamage = rhs._attackDamage;
@@ -39,6 +40,6 @@ FragTrap& FragTrap::operator=(const FragTrap &rhs)
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "High five!" << std::endl;
+	putString("High five!", C_GREEN);
 }
 

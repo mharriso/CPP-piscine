@@ -1,9 +1,15 @@
 #include <iostream>
-#include "DianondTrap.hpp"
+#include "DiamondTrap.hpp"
+#include "tools.hpp"
 
 int main()
 {
-	DiamondTrap
+	ClapTrap clap("Sensei");
+	DiamondTrap diamond("Monster");
+
+	diamond.whoAmI();
+	diamond.attack("Sensei");
+	clap.takeDamage(30);
 	return 0;
 }
 
