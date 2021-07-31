@@ -1,5 +1,5 @@
 CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror # -Wshadow -Wno-shadow
+CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
 NAME       = diamond
 SRCDIR     = src
