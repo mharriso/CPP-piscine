@@ -14,7 +14,6 @@ class ClapTrap
 		void		attack(std::string const &target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);
-		std::string	getName() const;
 		void		printStats() const;
 		ClapTrap	&operator=(const ClapTrap&);
 		ClapTrap(const ClapTrap&);
@@ -22,7 +21,5 @@ class ClapTrap
 		ClapTrap();
 		~ClapTrap();
 };
-
-std::ostream& operator<<(std::ostream &os, const ClapTrap &rhs);
 
 #endif

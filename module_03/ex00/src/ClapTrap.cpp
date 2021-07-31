@@ -59,17 +59,6 @@ void		ClapTrap::beRepaired(unsigned int amount)
 
 }
 
-std::string	ClapTrap::getName() const
-{
-	return this->_name;
-}
-
-std::ostream& operator << (std::ostream &os, const ClapTrap &rhs)
-{
-	os << rhs.getName();
-	return os;
-}
-
 void	ClapTrap::printStats() const
 {
 	std::cout << C_YELLOW;
