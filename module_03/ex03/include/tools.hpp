@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-# define C_RED     "\e[1;31m"
+//# define C_RED     "[1;31m"
 # define C_GREEN   "\e[1;32m"
 # define C_YELLOW  "\e[1;33m"
 # define C_BLUE    "\e[1;34m"

@@ -1,16 +1,4 @@
-if [ $# -ne 2 ]
-then
-echo "first argument must be number of module XX"
-echo "second argument must be the number of exercises"
-else
-mkdir module_$1
-cd module_$1
-for (( i=0; i < $2; i++ ))
-do
-mkdir ex0$i
-cd ex0$i
-mkdir src include
-echo 'CC         = clang++
+CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
 NAME       =
@@ -22,8 +10,8 @@ HFILES     =
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
-GREEN      = \033[1;32m
-RESET      = \033[0m
+GREEN      = [1;32m
+RESET      = [0m
 
 all: $(NAME)
 $(NAME): $(OBJS) $(HFILES)
@@ -43,15 +31,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re' > Makefile
-cd src
-echo '#include <iostream>
-
-int main()
-{
-	return 0;
-}' > main.cpp
-cd ..
-cd ..
-done
-fi
+.PHONY: all clean fclean re
