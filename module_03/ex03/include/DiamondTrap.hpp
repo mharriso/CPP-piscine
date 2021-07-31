@@ -12,6 +12,7 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		void whoAmI();
 		using ScavTrap::attack;
 		DiamondTrap &operator=(const DiamondTrap &rhs);
+
 		DiamondTrap(const DiamondTrap &src);
 		DiamondTrap(const std::string name);
 		DiamondTrap();

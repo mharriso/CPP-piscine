@@ -4,7 +4,7 @@ INCLUDE    = ./include
 NAME       = fragtrap
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS       = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

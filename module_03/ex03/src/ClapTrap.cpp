@@ -64,13 +64,18 @@ std::string	ClapTrap::getName() const
 	return this->_name;
 }
 
-int	ClapTrap::getHitPoints() const
-{
-	return this->_hitPoints;
-}
-
 std::ostream& operator << (std::ostream &os, const ClapTrap &rhs)
 {
 	os << rhs.getName();
 	return os;
+}
+
+void	ClapTrap::printStats() const
+{
+	std::cout << C_YELLOW;
+	std::cout << "        Name: " << this->_name << std::endl;
+	std::cout << "   HitPoints: " << this->_hitPoints << std::endl;
+	std::cout << "EnergyPoints: " << this->_energyPoints<< std::endl;
+	std::cout << "AttackDamage: " << this->_attackDamage << std::endl;
+	std::cout << C_RESET;
 }

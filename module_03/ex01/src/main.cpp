@@ -1,13 +1,17 @@
 #include <iostream>
 #include "ScavTrap.hpp"
+#include "tools.hpp"
 
 int main()
 {
 	ScavTrap scav("Rick");
 	ClapTrap clap("Sensei");
 
-	std::cout << "ClapTrap " << clap.getName() << " has " << clap.getHitPoints() << " hitpoints"<< std::endl;
-	std::cout << "ScavTrap " << scav.getName() << " has " << scav.getHitPoints() << " hitpoints"<< std::endl;
+	putString("\n   ClapTrap Stats   ", ULINE);
+	clap.printStats();
+	putString("\n   ScavTrap Stats   ", ULINE);
+	scav.printStats();
+	putString("\n   GuardGate   ", ULINE);
 	scav.guardGate();
 	return 0;
 }

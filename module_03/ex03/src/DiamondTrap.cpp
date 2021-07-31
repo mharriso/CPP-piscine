@@ -44,3 +44,5 @@ void	DiamondTrap::whoAmI()
 	std::cout << "DiamondTrap name : " << _name << std::endl;
 	std::cout << "ClapTrap name : " << ClapTrap::_name << std::endl;
 }
+
+

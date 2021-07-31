@@ -4,7 +4,7 @@ INCLUDE    = ./include
 NAME       = claptrap
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp ClapTrap.cpp
+SRCS       = main.cpp ClapTrap.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

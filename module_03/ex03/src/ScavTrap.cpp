@@ -49,6 +49,6 @@ void	ScavTrap::setEnergyPoints()
 
 void		ScavTrap::attack(std::string const &target)
 {
-	std::cout << "ScavTrap " << this->_name << " attacks " << target << ", causing " \
+	std::cout << "(ScavTrap) " << this->_name << " attacks " << target << ", causing " \
 	<< this->_attackDamage << " points of damage!" << std::endl;
 }
