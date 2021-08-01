@@ -11,7 +11,7 @@ mkdir ex0$i
 cd ex0$i
 mkdir src include
 echo 'CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror
+CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
 NAME       =
 SRCDIR     = src
