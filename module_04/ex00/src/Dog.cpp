@@ -27,6 +27,6 @@ Dog::Dog(const Dog &src)
 
 void	Dog::makeSound() const
 {
-	std::cout << Dog::_type << " says Woooff" << std::endl;
+	std::cout << _type << " says Woooff" << std::endl;
 }
 

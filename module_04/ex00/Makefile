@@ -4,9 +4,11 @@ INCLUDE    = ./include
 NAME       = animal
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp Animal.cpp Dog.cpp Cat.cpp tools.cpp
+SRCS       = main.cpp Animal.cpp Dog.cpp Cat.cpp tools.cpp \
+			WrongAnimal.cpp WrongCat.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = Animal.hpp Cat.hpp Dog.hpp tools.hpp
+HFILES     = Animal.hpp Cat.hpp Dog.hpp tools.hpp \
+			WrongAnimal.hpp WrongCat.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

@@ -27,5 +27,5 @@ Cat::Cat(const Cat &src)
 
 void	Cat::makeSound() const
 {
-	std::cout << Cat::_type << " says Meeeoww" << std::endl;
+	std::cout << _type << " says Meeeoww" << std::endl;
 }
