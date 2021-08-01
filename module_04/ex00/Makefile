@@ -1,12 +1,12 @@
 CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror
+CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
-NAME       =
+NAME       = animal
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp
+SRCS       = main.cpp Animal.cpp Dog.cpp Cat.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     =
+HFILES     = Animal.hpp Cat.hpp Dog.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
