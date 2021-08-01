@@ -7,7 +7,7 @@ OBJDIR     = .obj
 SRCS       = main.cpp ClapTrap.cpp ScavTrap.cpp \
 			FragTrap.cpp DiamondTrap.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = ClapTrap.hpp DiamondTrap.hpp FragTrap.hpp \
+HFILES     = ClapTrap.hpp DiamondTrap.hpp FragTrap.hpp
 			ScavTrap.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
