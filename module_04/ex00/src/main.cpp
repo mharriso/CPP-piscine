@@ -32,9 +32,9 @@ void		correct_test(void)
 
 int		main(void)
 {
-	putString("         CORRECT TEST         ", B_GREEN);
+	putString("             CORRECT TEST             ", B_GREEN);
 	correct_test();
-	putString("          WRONG TEST          ", B_RED);
+	putString("              WRONG TEST              ", B_RED);
 	wrong_test();
 	return (0);
 }
