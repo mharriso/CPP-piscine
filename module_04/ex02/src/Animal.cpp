@@ -25,12 +25,6 @@ Animal::~Animal()
 	putString("Animal destructor called", C_MAGENTA);
 }
 
-void	Animal::makeSound() const
-{
-	std::cout << _type << " says I am Animal" << std::endl;
-
-}
-
 std::string	Animal::getType() const
 {
 	return (this->_type);
