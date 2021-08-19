@@ -12,6 +12,8 @@ AMateria::AMateria(AMateria const& src):
 
 AMateria&	AMateria::operator=(AMateria const& rhs)
 {
+	if(this == &rhs)
+		return *this;
 	this->_type = rhs._type;
 	return *this;
 }

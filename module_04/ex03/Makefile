@@ -1,12 +1,14 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
-NAME       = interface
+NAME       = materia
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = AMateria.cpp main.cpp
+SRCS       = AMateria.cpp main.cpp Ice.cpp Cure.cpp \
+			MateriaSource.cpp Character.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = AMateria.hpp
+HFILES     = AMateria.hpp Ice.hpp Cure.hpp IMateriaSource.hpp \
+			MateriaSource.hpp Character.hpp ICharacter.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
