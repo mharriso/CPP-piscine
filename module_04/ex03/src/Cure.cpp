@@ -2,12 +2,12 @@
 #include "Character.hpp"
 
 Cure::Cure():
-		AMateria("Cure")
+		AMateria("cure")
 {
 }
 
 Cure::Cure(Cure const& src):
-		AMateria("Cure")
+		AMateria("cure")
 {
 	(void)src;
 }

@@ -1,8 +1,10 @@
 #include "Character.hpp"
 
 
-Character::Character(std::string name):_name(name)
+Character::Character(std::string name):
+		_name(name)
 {
+	std::cout << name << " is born!" << std::endl;
 	for (int i = 0; i < 4; i++)
 		_materias[i] = 0;
 }
@@ -36,6 +38,13 @@ Character&	Character::operator=(Character const& rhs)
 
 Character::~Character()
 {
+	std::cout << _name << " is dead(" << std::endl;
+}
+
+void				Character::use(int i, ICharacter& target)
+{
+	if (i >= 0 && i < 4 && _materias[i])
+		_materias[i]->use(target);
 }
 
 std::string const&	Character::getName() const
@@ -49,6 +58,7 @@ void				Character::equip(AMateria *m)
 		if (!_materias[i])
 		{
 			_materias[i] = m;
+			std::cout << "Equip " << _name << " by " << m->getType() << std::endl;
 			break;
 		}
 }
@@ -56,11 +66,10 @@ void				Character::equip(AMateria *m)
 void				Character::unequip(int i)
 {
 	if (i >= 0 && i < 4 && _materias[i])
+	{
+		std::cout << "Unequip " << _name << " " << _materias[i]->getType() << std::endl;
 		_materias[i] = 0;
+	}
 }
 
-void				Character::use(int i, ICharacter& target)
-{
-	if (i >= 0 && i < 4 && _materias[i])
-		_materias[i]->use(target);
-}
+
