@@ -10,35 +10,34 @@ class Form
 	private:
 		std::string const	_name;
 		bool				_signed;
-		int const			_gradSign;
-		int const			_gradExecute;
+		int const			_gradeSign;
+		int const			_gradeExecute;
 		Form();
 
 	public:
 		std::string const	getName() const;
 		bool				getSigned() const;
-		int					getGradSign() const;
-		int					getGradExecute() const;
+		int					getGradeSign() const;
+		int					getGradeExecute() const;
 		void				beSigned(Bureaucrat const &b);
-		Form(std::string const name, int const gradSign, int const gradExecute);
+		Form(std::string const name, int const gradeSign, int const gradeExecute);
 		Form(Form const&);
 		Form	&operator=(Form const&);
 		~Form();
-
-
-	class GradeTooHighException : public std::exception
-	{
-		const char* what() const throw()
-		{
-			return "Grade is too high!";
-		}
-	};
 
 	class GradeTooLowException : public std::exception
 	{
 		const char* what() const throw()
 		{
-			return "Grade is too low!";
+			return "grade is too low!";
+		}
+	};
+
+	class GradeTooHighException : public std::exception
+	{
+		const char* what() const throw()
+		{
+			return "grade is too high!";
 		}
 	};
 
@@ -46,7 +45,7 @@ class Form
 	{
 		const char* what() const throw()
 		{
-			return "form is already signed";
+			return "form is already signed!";
 		}
 	};
 };

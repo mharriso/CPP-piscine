@@ -15,7 +15,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &src)
 DiamondTrap::DiamondTrap(const std::string name):
 		ClapTrap(name + "_clap_name"),
 		ScavTrap(name),
-		FragTrap(name)
+		FragTrap(name),
 {
 	putString("DiamondTrap constructor called", C_BLUE);
 	_name = name;

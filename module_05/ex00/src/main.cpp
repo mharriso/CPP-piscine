@@ -11,12 +11,12 @@ int main()
 	std::cout << Tim;
 	Bureaucrat Robert("Boss Robert", 1);
 	std::cout << Robert;
-	Bureaucrat Emily("Klerk Emily", 150);
-	std::cout << Emily;
+	Bureaucrat Emily("Clerk Emily", 150);
+	std::cout << Emily << std::endl;
 
 	sleep(1);
-	std::cout << std::endl << "<<<<<<<<<<<< TEST 1 >>>>>>>>>>>>" << std::endl;
-	std::cout << std::endl << "Try to increment Boss's grade: " << std::endl;
+	putString("<<<<<<<<<<<< TEST 1 >>>>>>>>>>>>", C_YELLOW);
+	std::cout << "Try to increment Boss's grade: " << std::endl;
 	sleep(2);
 	Robert.incrementGrade();
 	sleep(1);
@@ -25,11 +25,11 @@ int main()
 	sleep(2);
 	Emily.decrementGrade();
 	sleep(1);
-	std::cout << Emily;
+	std::cout << Emily << std::endl;
 
 	sleep(1);
-	std::cout << std::endl << "<<<<<<<<<<<< TEST 2 >>>>>>>>>>>>" << std::endl;
-	std::cout << std::endl << "Try to create bureaucrat with invalid grade:" << std::endl;
+	putString("<<<<<<<<<<<< TEST 2 >>>>>>>>>>>>", C_YELLOW);
+	std::cout << "Try to create a bureaucrat with invalid grade:" << std::endl;
 	sleep(2);
 	try
 	{
@@ -53,3 +53,4 @@ int main()
 
 	return 0;
 }
+

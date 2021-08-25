@@ -1,6 +1,8 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+
 #define C_RED     "\e[1;31m"
+# define C_GREEN   "\e[1;32m"
 #define C_RESET   "\e[0m"
 
 Bureaucrat::Bureaucrat(std::string const name, int grade):
@@ -76,5 +78,15 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat &src)
 
 void				Bureaucrat::signForm(Form &form)
 {
+	try
+	{
+		form.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << _name << " cannot sign " << form.getName() << " because " C_RED << e.what() << C_RESET << std::endl;
+		return ;
+	}
+	std::cout << C_GREEN << _name << " signs " << form.getName() << C_RESET << std::endl;
 
 }
