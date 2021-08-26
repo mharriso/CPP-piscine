@@ -1,7 +1,5 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
-#define C_BLUE    "\e[1;34m"
-#define C_RESET   "\e[0m"
 
 Form::Form(std::string const name, int const gradeSign, int const gradeExecute):
 		_name(name),

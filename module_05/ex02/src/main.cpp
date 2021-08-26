@@ -6,6 +6,7 @@
 
 int main()
 {
+	//std::cout << C_YELLOW << "███▀▀▀██████\n█▀▄██▄▄▀▄▄▀█\n███▀▀▄▄█▀▀██\n█▀▄████▐█▄▀█\n██████▌█████\n██████─█████\n█████▌─█████\n█████─▐█████\n█████─▐█████\n████▌─▐█████\n" << C_RESET;
 	Bureaucrat Sam("Manager Sam", 21);
 	std::cout << Sam;
 	Bureaucrat Tim("Manager Tim", 42);

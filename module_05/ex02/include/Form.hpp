@@ -2,6 +2,8 @@
 #define FORM_H
 
 #include <iostream>
+#define C_BLUE    "\e[1;34m"
+#define C_RESET   "\e[0m"
 
 class Bureaucrat;
 
@@ -15,6 +17,7 @@ class Form
 		Form();
 
 	public:
+		virtual void execute(Bureaucrat const & executor) = 0;
 		std::string const	getName() const;
 		bool				getSigned() const;
 		int					getGradeSign() const;
