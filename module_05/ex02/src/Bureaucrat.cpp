@@ -90,3 +90,9 @@ void				Bureaucrat::signForm(Form &form)
 	std::cout << C_GREEN << _name << " signs " << form.getName() << C_RESET << std::endl;
 
 }
+
+void				Bureaucrat::executeForm(Form const &form)
+{
+	(void)form;
+}
+

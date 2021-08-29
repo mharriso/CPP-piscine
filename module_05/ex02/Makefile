@@ -4,9 +4,11 @@ INCLUDE    = ./include
 NAME       = bureaucratic_machine
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = Bureaucrat.cpp main.cpp tools.cpp Form.cpp
+SRCS       = Bureaucrat.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp \
+			tools.cpp Form.cpp RobotomyRequestForm.cpp main.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = Bureaucrat.hpp tools.hpp Form.hpp
+HFILES     = Bureaucrat.hpp PresidentialPardonForm.hpp ShrubberyCreationForm.hpp \
+			Form.hpp RobotomyRequestForm.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

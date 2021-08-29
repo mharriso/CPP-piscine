@@ -16,6 +16,7 @@ class Bureaucrat
 		void				incrementGrade();
 		void				decrementGrade();
 		void				signForm(Form &form);
+		void				executeForm(Form const &form);
 		Bureaucrat(std::string const name, int grade);
 		Bureaucrat(Bureaucrat const&);
 		Bureaucrat	&operator=(Bureaucrat const&);

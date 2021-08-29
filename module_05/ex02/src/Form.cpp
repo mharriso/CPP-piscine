@@ -70,3 +70,12 @@ std::ostream	&operator<<(std::ostream &out, Form &src)
 	out << "      SIGNED: " << std::boolalpha << src.getSigned() << C_RESET << std::endl;
 	return out;
 }
+
+void				Form::execute(Bureaucrat const &executor)
+{
+	if(executor.getGrade() < _gradeExecute)
+		throw Form::GradeTooLowException();
+	if(_signed == false)
+		throw Form::NotSignedException();
+}
+

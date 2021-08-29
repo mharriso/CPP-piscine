@@ -1,12 +1,14 @@
 #include <iostream>
+#include <unistd.h>
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "tools.hpp"
-#include <unistd.h>
+#include "PresidentialPardonForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int main()
 {
-	//std::cout << C_YELLOW << "███▀▀▀██████\n█▀▄██▄▄▀▄▄▀█\n███▀▀▄▄█▀▀██\n█▀▄████▐█▄▀█\n██████▌█████\n██████─█████\n█████▌─█████\n█████─▐█████\n█████─▐█████\n████▌─▐█████\n" << C_RESET;
 	Bureaucrat Sam("Manager Sam", 21);
 	std::cout << Sam;
 	Bureaucrat Tim("Manager Tim", 42);
@@ -56,39 +58,28 @@ int main()
 	sleep(1);
 	putString("<<<<<<<<<<<< TEST 3 >>>>>>>>>>>>", C_YELLOW);
 	sleep(1);
-	std::cout << "Create a valid form: " << std::endl;
-	Form contract("Labor Contract", 20, 1);
-	std::cout << contract;
+	std::cout << "Create a few concrete forms:" << std::endl;
+	ShrubberyCreationForm palm("Paradise");
+	std::cout << palm;
 	sleep(1);
-	std::cout << "Try to create an invalid form: " << std::endl;
-	try
-	{
-		Form fail1("Document", 9999, 1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << C_RED << e.what() << C_RESET << std::endl;
-	}
+	RobotomyRequestForm robo("Bob");
+	std::cout << robo;
 	sleep(1);
-	std::cout << "Try to create an invalid form: " << std::endl;
-	try
-	{
-		Form fail2("Document", 42, -555);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << C_RED << e.what() << C_RESET << std::endl << std::endl;
-	}
+	PresidentialPardonForm pardon("Mike");
+	std::cout << pardon;
 	sleep(1);
 	putString("<<<<<<<<<<<< TEST 4 >>>>>>>>>>>>", C_YELLOW);
 	sleep(1);
-	std::cout << "Clerk is trying to sign the form ..." << std::endl;
-	Emily.signForm(contract);
-	sleep(1);
-	std::cout << "Boss is trying to sign the form ..." << std::endl;
-	Robert.signForm(contract);
-	sleep(1);
-	std::cout << "Boss is trying to sign the form again ..." << std::endl;
-	Robert.signForm(contract);
+
+	// putString("<<<<<<<<<<<< TEST 4 >>>>>>>>>>>>", C_YELLOW);
+	// sleep(1);
+	// std::cout << "Clerk is trying to sign the form ..." << std::endl;
+	// Emily.signForm(contract);
+	// sleep(1);
+	// std::cout << "Boss is trying to sign the form ..." << std::endl;
+	// Robert.signForm(contract);
+	// sleep(1);
+	// std::cout << "Boss is trying to sign the form again ..." << std::endl;
+	// Robert.signForm(contract);
 	return 0;
 }

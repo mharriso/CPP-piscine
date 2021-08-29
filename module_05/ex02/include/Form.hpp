@@ -2,8 +2,7 @@
 #define FORM_H
 
 #include <iostream>
-#define C_BLUE    "\e[1;34m"
-#define C_RESET   "\e[0m"
+#include "tools.hpp"
 
 class Bureaucrat;
 
@@ -17,12 +16,13 @@ class Form
 		Form();
 
 	public:
-		virtual void execute(Bureaucrat const & executor) = 0;
 		std::string const	getName() const;
 		bool				getSigned() const;
 		int					getGradeSign() const;
 		int					getGradeExecute() const;
+		virtual	void		action() const = 0;
 		void				beSigned(Bureaucrat const &b);
+		void				execute(Bureaucrat const &executor);
 		Form(std::string const name, int const gradeSign, int const gradeExecute);
 		Form(Form const&);
 		Form	&operator=(Form const&);
@@ -49,6 +49,14 @@ class Form
 		const char* what() const throw()
 		{
 			return "form is already signed!";
+		}
+	};
+
+	class NotSignedException : public std::exception
+	{
+		const char* what() const throw()
+		{
+			return "form has not been signed!";
 		}
 	};
 };
