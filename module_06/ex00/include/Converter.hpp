@@ -35,5 +35,13 @@ class Converter
 				return "impossible";
 			}
 		};
+
+		class NonDisplayableException : public std::exception
+		{
+			const char* what() const throw()
+			{
+				return "Non displayable";
+			}
+		};
 };
 #endif

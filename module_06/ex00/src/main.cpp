@@ -12,6 +12,7 @@ int main(int argc, char **argv)
 		std::string s = argv[1];
 		Converter conv(s);
 		conv.toChar();
+		conv.toInt();
 		return 0;
 
 	}
