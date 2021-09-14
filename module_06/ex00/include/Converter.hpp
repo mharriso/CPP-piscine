@@ -2,8 +2,10 @@
 #define CONVERTER_H
 
 #include <string>
-#include <limits>
 #include <iostream>
+#include <limits>
+#include <iomanip>
+#include <math.h>
 
 class Converter
 {
@@ -20,13 +22,13 @@ class Converter
 		Converter &operator=(Converter const &);
 		~Converter();
 
-		class WrongArgException : public std::exception
-		{
-			const char* what() const throw()
-			{
-				return "Error argument";
-			}
-		};
+		// class WrongArgException : public std::exception
+		// {
+		// 	const char* what() const throw()
+		// 	{
+		// 		return "Error argument";
+		// 	}
+		// };
 
 		class WrongConvertException : public std::exception
 		{

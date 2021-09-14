@@ -1,7 +1,7 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
-NAME       =
+NAME       = serialization
 SRCDIR     = src
 OBJDIR     = .obj
 SRCS       = main.cpp
