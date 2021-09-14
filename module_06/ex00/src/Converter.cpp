@@ -25,17 +25,29 @@ Converter &Converter::operator=(Converter const &rhs)
 	return *this;
 }
 
+void	Converter::checkStr(std::string::size_type sz) const
+{
+	if(_str == "+inf" || _str == "-inf" || _str == "+inff" || _str == "-inff" || _str == "nanf")
+		return ;
+	if(_str[_str.length() - 1] == 'f')
+		sz++;
+	if(sz != _str.length())
+		throw Converter::WrongConvertException();
+}
+
 void	Converter::toChar() const
 {
 	double	d;
 	char	c;
+	std::string::size_type sz = 0;
 
 	std::cout << "  char: ";
 	try
 	{
 		if(_str == "nan" || _str == "nanf")
 			throw Converter::WrongConvertException();
-		d = stod(_str);
+		d = stod(_str, &sz);
+		checkStr(sz);
 		if(d > CHAR_MAX || d < CHAR_MIN)
 			throw Converter::WrongConvertException();
 		c = static_cast<char>(d);
@@ -59,13 +71,15 @@ void	Converter::toInt() const
 {
 	double	d;
 	int		i;
+	std::string::size_type sz = 0;
 
 	std::cout << "   int: ";
 	try
 	{
 		if(_str == "nan" || _str == "nanf")
 			throw Converter::WrongConvertException();
-		d = stod(_str);
+		d = stod(_str, &sz);
+		checkStr(sz);
 		if(d > INT_MAX || d < INT_MIN)
 			throw Converter::WrongConvertException();
 		i = static_cast<int>(d);
@@ -82,11 +96,13 @@ void	Converter::toFloat() const
 {
 	double	d;
 	float	f;
+	std::string::size_type sz = 0;
 
 	std::cout << " float: ";
 	try
 	{
-		d = stod(_str);
+		d = stod(_str, &sz);
+		checkStr(sz);
 		f = static_cast<float>(d);
 	}
 	catch(const std::exception& e)
@@ -102,11 +118,13 @@ void	Converter::toFloat() const
 void	Converter::toDouble() const
 {
 	double	d;
+	std::string::size_type	sz = 0;
 
 	std::cout << "double: ";
 	try
 	{
-		d = stod(_str);
+		d = stod(_str, &sz);
+		checkStr(sz);
 	}
 	catch(const std::exception& e)
 	{

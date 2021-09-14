@@ -4,9 +4,8 @@ RED='\033[31m'
 GREEN='\033[32m'
 YELLOW='\033[33m'
 BLUE='\033[34;1m'
-array=(nan -inf +inf -inff +inff nanf
-		0 42.0f 21 a21 123.45 777w
-		999999999999999999999999999999999999999)
+array=(nan -inf +inf -inff +inff nanf nannn
+		0 42.0f 21 a21 b55.5 123.45 777w 4..4 99.99ff 77.0008)
 
 for index in ${!array[*]}
 do

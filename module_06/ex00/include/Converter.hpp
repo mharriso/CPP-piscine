@@ -17,6 +17,7 @@ class Converter
 		void	toInt() const;
 		void	toFloat() const;
 		void	toDouble() const;
+		void	checkStr(std::string::size_type sz) const;
 		Converter(std::string str);
 		Converter(Converter const &);
 		Converter &operator=(Converter const &);
