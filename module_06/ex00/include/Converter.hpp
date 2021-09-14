@@ -23,14 +23,6 @@ class Converter
 		Converter &operator=(Converter const &);
 		~Converter();
 
-		// class WrongArgException : public std::exception
-		// {
-		// 	const char* what() const throw()
-		// 	{
-		// 		return "Error argument";
-		// 	}
-		// };
-
 		class WrongConvertException : public std::exception
 		{
 			const char* what() const throw()
