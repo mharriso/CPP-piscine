@@ -30,9 +30,6 @@
 *.exe
 *.out
 *.app
-ex02/my_log
-stepik_gnl.cpp
 .DS_Store
 .vscode
-
-module_04_oleg
+.gitignore
