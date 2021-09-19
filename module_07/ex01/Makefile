@@ -1,12 +1,12 @@
 CC         = clang++
 CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 INCLUDE    = ./include
-NAME       =
+NAME       = iter
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp
+SRCS       = main.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     =
+HFILES     = iter.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
