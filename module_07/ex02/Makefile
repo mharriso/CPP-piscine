@@ -4,9 +4,9 @@ INCLUDE    = ./include
 NAME       = array
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp 
+SRCS       = main.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = Array.hpp
+HFILES     = Array.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
