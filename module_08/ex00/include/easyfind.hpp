@@ -22,4 +22,15 @@ typename T::const_iterator	easyfind(T const &haystack, int const needle)
 	return (it);
 }
 
+template <typename T>
+typename T::iterator	easyfind(T &haystack, int const needle)
+{
+	typename T::iterator it;
+
+	it = std::find(haystack.begin(), haystack.end(), needle);
+	if(it == haystack.end())
+		throw NotFoundException();
+	return (it);
+}
+
 #endif
