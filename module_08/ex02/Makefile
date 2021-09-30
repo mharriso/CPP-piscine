@@ -1,12 +1,12 @@
 CC         = clang++
-CFLAGS     = -Wall -Wextra -Werror -Wshadow -Wno-shadow
+CFLAGS     = -Wall -Wextra -Werror
 INCLUDE    = ./include
-NAME       =
+NAME       = mutant
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp
+SRCS       = main.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     =
+HFILES     = MutantStack.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 

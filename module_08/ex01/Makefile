@@ -4,9 +4,9 @@ INCLUDE    = ./include
 NAME       = span
 SRCDIR     = src
 OBJDIR     = .obj
-SRCS       = main.cpp span.cpp tools.cpp
+SRCS       = main.cpp Span.cpp tools.cpp
 SRCS       := $(addprefix $(SRCDIR)/, $(SRCS))
-HFILES     = span.hpp tools.hpp
+HFILES     = Span.hpp tools.hpp
 HFILES     := $(addprefix $(INCLUDE)/, $(HFILES))
 OBJS       = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
